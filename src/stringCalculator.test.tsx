@@ -16,5 +16,11 @@ describe("UI: basic accessibility tests", () => {
     
         expect(calcDiv).toHaveAttribute("role", "button");
       });
-      
+    test("image should have descriptive alt text", () => {
+        render(<App />);
+        const img = screen.getByRole("img");
+        // console.log(img.getAttribute("alt"));
+        expect(img).toHaveAttribute("alt");
+        expect(img.getAttribute("alt")).not.toBe("");
+      });
 });
