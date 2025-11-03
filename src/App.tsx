@@ -18,8 +18,13 @@ const App = () => {
       <h2>String Calculator</h2>
 
       <h1 style={{ fontSize: '20px' }}>Enter numbers</h1>
+      
+      <label htmlFor="numbers" style={{ display: 'block', fontWeight: 'bold' }}>
+        Enter numbers (comma-separated):
+      </label>
 
       <textarea
+        id="numbers"
         style={{ margin: '10px 0', color: '#aaa' }}
         placeholder='Enter numbers'
         value={input}
