@@ -52,7 +52,7 @@ const App = () => {
         onClick={handleCalculate}
         style={{
           padding: '10px',
-          backgroundColor: '#008cba',
+          backgroundColor: '#076888',
           color: '#fff',
           border: 'none',
         }}
