@@ -4,9 +4,10 @@ import calculateString from './stringCalculator';
 const App = () => {
   const [input, setInput] = useState('');
   const [result, setResult] = useState<number | null>(null);
+  const [error, setError] = useState('');
 
   const handleCalculate = () => {
-    calculateString(input, setResult);
+    calculateString(input, setError, setResult);
   };
 
   return (
@@ -48,9 +49,15 @@ const App = () => {
 
       {result !== null && <p style={{ color: 'green' }}>Result: {result}</p>}
 
-      <div role='alert'>
-        <p>Make sure you enter numbers correctly!</p>
-      </div>
+      {error && (
+        <div
+          role="alert"
+          aria-live="assertive"
+          style={{ color: '#d32f2f', marginTop: '15px', fontWeight: 'bold' }}
+        >
+          <p>{error}</p>
+        </div>
+      )}
     </div>
   );
 };
