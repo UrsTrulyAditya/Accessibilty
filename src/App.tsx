@@ -33,9 +33,7 @@ const App = () => {
         alt='String calculator'
       />
 
-      <h2 style={{ fontSize: '20px' }}>Enter numbers</h2>
-
-      <label htmlFor="numbers" style={{ display: 'block', fontWeight: 'bold' }}>
+      <label htmlFor="numbers" style={{ display: 'block', fontWeight: 'bold', marginTop: '10px' }}>
         Enter numbers (comma-separated):
       </label>
 
@@ -49,6 +47,7 @@ const App = () => {
       />
 
       <button
+        role='button'
         onClick={handleCalculate}
         style={{
           padding: '10px',
