@@ -31,7 +31,7 @@ const App = () => {
         width={600}
         height={400}
         alt='String calculator'
-        />
+      />
 
       <h2 style={{ fontSize: '20px' }}>Enter numbers</h2>
 
@@ -45,6 +45,7 @@ const App = () => {
         value={input}
         onChange={(e) => setInput(e.target.value)}
         aria-describedby={error ? 'error' : result !== null ? 'result' : undefined}
+        style={{ margin: '10px 0', color: '#333' }}
       />
 
       <button
@@ -54,7 +55,14 @@ const App = () => {
           backgroundColor: '#008cba',
           color: '#fff',
           border: 'none',
-        }}>
+        }}
+        onFocus={(e) => {
+          e.currentTarget.style.outline = '3px solid #005f7f';
+        }}
+        onBlur={(e) => {
+          e.currentTarget.style.outline = 'none';
+        }}
+      >
         Calculate
       </button>
 
