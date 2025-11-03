@@ -23,4 +23,8 @@ describe("UI: basic accessibility tests", () => {
         expect(img).toHaveAttribute("alt");
         expect(img.getAttribute("alt")).not.toBe("");
       });
+    test("textarea should have a label", () => {
+        render(<App />);
+        expect(screen.getByLabelText(/enter numbers/i)).toBeInTheDocument();
+      });
 });
