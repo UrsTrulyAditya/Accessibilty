@@ -9,9 +9,21 @@ const App = () => {
   const handleCalculate = () => {
     calculateString(input, setError, setResult);
   };
-
+  
   return (
-    <div style={{ padding: '20px', backgroundColor: '#fff', color: '#aaa' }}>
+    <main
+      style={{
+        padding: '20px',
+        backgroundColor: '#fff',
+        color: '#333',
+        maxWidth: '700px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        justifyContent: 'center',
+      }}
+      aria-labelledby="title"
+    >
       <img
         src='https://images.unsplash.com/photo-1594352161389-11756265d1b5?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
         width={600}
@@ -29,14 +41,12 @@ const App = () => {
 
       <textarea
         id="numbers"
-        style={{ margin: '10px 0', color: '#aaa' }}
         placeholder='Enter numbers'
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
 
       <button
-        role="button"
         onClick={handleCalculate}
         style={{
           padding: '10px',
@@ -58,7 +68,7 @@ const App = () => {
           <p>{error}</p>
         </div>
       )}
-    </div>
+    </main>
   );
 };
 
